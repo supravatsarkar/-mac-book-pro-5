@@ -1,4 +1,4 @@
-
+/* -----------------code start--------------------------- */
 const bestPrice = document.getElementById('best-price');
 const memoryPrice = document.getElementById('memory-price');
 const storagePrice = document.getElementById('storage-price');
@@ -6,10 +6,11 @@ const deliveryCharge = document.getElementById('delivery-charge');
 const totalPrice = document.getElementById('total-price');
 const total = document.getElementById('total');
 updateTotalPrice();
-// update price function
+// calculation
 function calculate(calc, price) {
     calc.innerText = price;
 }
+// update price
 function updateTotalPrice() {
     totalPrice.innerText = parseFloat(bestPrice.innerText) + parseFloat(memoryPrice.innerText) + parseFloat(storagePrice.innerText) + parseFloat(deliveryCharge.innerText);
     total.innerText = totalPrice.innerText;
@@ -26,31 +27,25 @@ document.getElementById('memory-16gb').addEventListener('click', function () {
 })
 
 // storage section handle 
-// const parentAllButton = addEventListener()
 document.getElementById('storage-256gb').addEventListener('click', function () {
-    // storagePrice.innerText = 0;
     calculate(storagePrice, 0);
     updateTotalPrice();
 })
 document.getElementById('storage-512gb').addEventListener('click', function () {
-    // storagePrice.innerText = 100;
     calculate(storagePrice, 100);
     updateTotalPrice();
 })
 document.getElementById('storage-1tb').addEventListener('click', function () {
-    // storagePrice.innerText = 180;
     calculate(storagePrice, 180);
     updateTotalPrice();
 })
 
 // delivery section handle 
 document.getElementById('free-delivery').addEventListener('click', function () {
-    // deliveryCharge.innerText = 0;
     calculate(deliveryCharge, 0);
     updateTotalPrice();
 })
 document.getElementById('prime-delivery').addEventListener('click', function () {
-    // deliveryCharge.innerText = 20;
     calculate(deliveryCharge, 20);
     updateTotalPrice();
 })
@@ -69,6 +64,7 @@ document.getElementById('promo-submit').addEventListener('click', function () {
         document.getElementById('invalid-msg').style.display = 'block';
     }
 })
+/* -----------------code end--------------------------- */
 
 
 
